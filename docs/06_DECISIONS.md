@@ -159,3 +159,29 @@ Motivo
 Buscar una experiencia futurista e inmersiva sin convertir la aplicación en una simple demostración visual.
 
 JARVIS debe sentirse como un producto funcional.
+
+---
+
+# ADR-007
+
+## Nombre
+
+Framework de interfaz gráfica.
+
+## Estado
+
+Aceptada.
+
+## Fecha
+
+Después de TASK-002.
+
+## Decisión
+
+JARVIS utilizará PySide6 como framework principal para la interfaz gráfica.
+
+## Motivo
+
+Permite crear una interfaz moderna, escalable y compatible con la experiencia visual buscada para JARVIS.
+
+Su sistema de componentes facilita futuras animaciones, estados visuales y elementos interactivos.
