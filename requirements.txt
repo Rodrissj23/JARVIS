@@ -5,3 +5,15 @@
 
 # PySide6: framework de interfaz gráfica (ver docs/06_DECISIONS.md - ADR-007)
 PySide6
+
+# openai-whisper: motor de Speech To Text (ver docs/06_DECISIONS.md - ADR-009)
+openai-whisper
+
+# piper-tts: motor de Text To Speech (ver docs/06_DECISIONS.md - ADR-010)
+piper-tts
+
+# sounddevice + numpy: captura y reproducción de audio (I/O de micrófono
+# y altavoz), requerido por la capa Voice para alimentar a Whisper y
+# reproducir la salida de Piper (ver docs/01_ARCHITECTURE.md - Voice)
+sounddevice
+numpy
