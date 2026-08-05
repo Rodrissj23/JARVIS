@@ -6,15 +6,14 @@ sistema: recibe todas las solicitudes, decide qué módulo utilizar y
 controla el estado de JARVIS. Ningún otro componente decide el flujo;
 esa responsabilidad es exclusiva del Orchestrator.
 
-Esta implementación (TASK-005) construye la estructura del
-Orchestrator, define su interfaz pública y prepara los puntos de
+Esta implementación (TASK-005) construyó la estructura del
+Orchestrator y su interfaz pública, preparando los puntos de
 comunicación con UI, Voice, Brain y Modules.
 
-No incluye lógica de conversación ni ejecución de acciones del
-sistema: la integración real con Brain (Claude) corresponde a
-TASK-006, y el registro de módulos funcionales a TASK-007/TASK-008.
-Por eso `brain` y `modules` quedan preparados pero sin utilizarse
-todavía.
+TASK-007 agregó `handle_request`, el punto único que decide si una
+solicitud la resuelve un módulo registrado o, si ninguno aplica, se
+deriva a Brain. Los módulos nunca acceden directamente a Brain, UI o
+Voice: su interfaz pública es `can_handle(text)` y `handle(text)`.
 """
 
 from typing import Any, Dict, Optional
@@ -69,3 +68,23 @@ class Orchestrator:
         TASK-008. Ningún módulo se registra todavía.
         """
         self._modules[name] = module
+
+    def handle_request(self, text: str) -> str:
+        """Resuelve una solicitud de texto.
+
+        Consulta `can_handle(text)` de cada módulo registrado; el
+        primero que devuelva `True` resuelve la solicitud mediante su
+        `handle(text)`. Si ningún módulo aplica, la solicitud se
+        deriva a Brain. Este es el único punto del sistema que decide
+        qué módulo utilizar (docs/01_ARCHITECTURE.md - Orchestrator).
+        """
+        for module in self._modules.values():
+            if module.can_handle(text):
+                return module.handle(text)
+
+        if self._brain is not None:
+            return self._brain.ask(text)
+
+        raise RuntimeError(
+            "Ningún módulo pudo resolver la solicitud y no hay Brain configurado."
+        )

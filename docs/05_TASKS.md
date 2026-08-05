@@ -304,3 +304,43 @@ Una tarea debe:
 4. No agregar funcionalidades futuras.
 5. Ser revisada antes de marcarse como completada.
 6. Solo puede existir una TASK en estado **Pendiente** al mismo tiempo.
+
+---
+
+# TASK-008
+
+## Estado
+
+Pendiente.
+
+## Nombre
+
+Integrar el flujo principal del sistema.
+
+## Objetivo
+
+Conectar los componentes principales de JARVIS respetando la arquitectura definida, preparando el flujo completo de comunicación entre UI, Voice, Orchestrator, Brain y Modules.
+
+## Alcance
+
+- Instanciar los componentes principales del sistema.
+- Conectar UI, Voice, Brain y Orchestrator.
+- Registrar los módulos iniciales en el Orchestrator.
+- Preparar el punto de entrada de la aplicación para la integración de los componentes.
+- Mantener un único flujo de comunicación a través del Orchestrator.
+
+## Restricciones
+
+- No implementar ejecución continua.
+- No implementar palabra de activación.
+- No agregar nuevos módulos.
+- No modificar la arquitectura existente.
+- No implementar funcionalidades fuera del flujo principal.
+
+## Decisiones asociadas
+
+- ADR-001: Arquitectura modular.
+- ADR-002: Claude como motor principal de razonamiento.
+- ADR-007: Framework de interfaz gráfica PySide6.
+- ADR-009: Motor de reconocimiento de voz Whisper.
+- ADR-010: Motor de síntesis de voz Piper TTS.
