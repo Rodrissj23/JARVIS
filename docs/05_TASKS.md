@@ -209,7 +209,7 @@ Construir el componente central encargado de coordinar la comunicación entre lo
 
 ## Estado
 
-Pendiente.
+Completa.
 
 ## Nombre
 
@@ -239,7 +239,7 @@ Pendiente de definición al habilitar la tarea.
 
 ## Estado
 
-Bloqueada.
+Pendiente.
 
 ## Nombre
 
