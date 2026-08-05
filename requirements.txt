@@ -1,63 +1,28 @@
-"""
-Brain de JARVIS.
+# Dependencias de JARVIS
+#
+# Cada dependencia agregada debe estar justificada técnicamente,
+# según la Regla 4 de docs/04_RULES.md.
 
-Según docs/01_ARCHITECTURE.md, el Brain es responsable de la
-comunicación con Claude, la construcción del contexto y la recepción
-de respuestas. Nunca interactúa directamente con la UI ni con Voice,
-y nunca ejecuta acciones del sistema.
+# PySide6: framework de interfaz gráfica (ver docs/06_DECISIONS.md - ADR-007)
+PySide6
 
-Toda comunicación con el resto del sistema se realiza a través del
-Orchestrator, que es quien posee la instancia de Brain (ver
-src/orchestrator/orchestrator.py). Esta clase no decide el flujo ni
-el estado de JARVIS; solo construye el contexto de la conversación,
-lo envía a Claude y devuelve la respuesta.
+# openai-whisper: motor de Speech To Text (ver docs/06_DECISIONS.md - ADR-009)
+openai-whisper
 
-Requiere la variable de entorno ANTHROPIC_API_KEY configurada
-(decisión tomada durante TASK-006). El SDK oficial de Anthropic la
-detecta automáticamente al crear el cliente.
-"""
+# piper-tts: motor de Text To Speech (ver docs/06_DECISIONS.md - ADR-010)
+piper-tts
 
-from typing import Dict, List
+# sounddevice + numpy: captura y reproducción de audio (I/O de micrófono
+# y altavoz), requerido por la capa Voice para alimentar a Whisper y
+# reproducir la salida de Piper (ver docs/01_ARCHITECTURE.md - Voice)
+sounddevice
+numpy
 
-import anthropic
+# anthropic: SDK oficial para comunicarse con Claude desde el Brain
+# (ver docs/06_DECISIONS.md - ADR-002, decisión de SDK tomada en TASK-006)
+anthropic
 
-DEFAULT_MODEL = "claude-sonnet-5"
-DEFAULT_MAX_TOKENS = 1024
-
-
-class Brain:
-    """Comunica JARVIS con Claude, manteniendo el contexto de la conversación."""
-
-    def __init__(self, model: str = DEFAULT_MODEL) -> None:
-        self._model = model
-        self._client = None
-        self._history: List[Dict[str, str]] = []
-
-    def _get_client(self) -> anthropic.Anthropic:
-        """Crea el cliente de Anthropic la primera vez que se solicita
-        (lazy loading), siguiendo el mismo patrón que SpeechToText usa
-        para cargar el modelo de Whisper.
-        """
-        if self._client is None:
-            self._client = anthropic.Anthropic()
-        return self._client
-
-    def ask(self, text: str) -> str:
-        """Envía `text` a Claude junto con el historial de la conversación
-        y devuelve la respuesta como texto.
-
-        El historial se mantiene en memoria mientras la instancia de
-        Brain exista, permitiendo que la conversación tenga contexto
-        entre turnos.
-        """
-        self._history.append({"role": "user", "content": text})
-
-        response = self._get_client().messages.create(
-            model=self._model,
-            max_tokens=DEFAULT_MAX_TOKENS,
-            messages=self._history,
-        )
-
-        reply = response.content[0].text
-        self._history.append({"role": "assistant", "content": reply})
-        return reply
+# requests: consultas HTTP al servicio de clima Open-Meteo, usado por
+# ClimaModule (decisión de servicio tomada en TASK-008; Open-Meteo no
+# requiere API key)
+requests
