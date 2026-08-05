@@ -170,7 +170,7 @@ Crear la capa encargada de recibir y emitir audio.
 
 ## Estado
 
-Pendiente.
+Completada.
 
 ## Nombre
 
@@ -209,7 +209,7 @@ Construir el componente central encargado de coordinar la comunicación entre lo
 
 ## Estado
 
-Bloqueada.
+Pendiente.
 
 ## Nombre
 
