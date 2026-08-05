@@ -2,14 +2,23 @@
 JARVIS - Punto de entrada principal.
 
 Este archivo es el punto de arranque de la aplicación.
-La lógica de inicialización se implementará en tareas futuras,
-una vez estén disponibles los componentes definidos en
-docs/01_ARCHITECTURE.md (UI, Voice, Orchestrator, Brain, Modules).
+Por ahora únicamente inicializa y muestra la ventana principal.
+El resto de la inicialización (Voice, Orchestrator, Brain, Modules)
+se implementará en tareas futuras.
 """
+
+import sys
+
+from PySide6.QtWidgets import QApplication
+
+from src.ui.main_window import MainWindow
 
 
 def main() -> None:
-    pass
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":

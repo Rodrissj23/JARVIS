@@ -1,5 +1,7 @@
 # Dependencias de JARVIS
 #
-# Actualmente no hay dependencias.
 # Cada dependencia agregada debe estar justificada técnicamente,
 # según la Regla 4 de docs/04_RULES.md.
+
+# PySide6: framework de interfaz gráfica (ver docs/06_DECISIONS.md - ADR-007)
+PySide6
