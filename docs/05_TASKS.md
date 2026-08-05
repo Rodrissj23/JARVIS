@@ -132,7 +132,7 @@ Crear el sistema visual que represente el estado actual de JARVIS.
 
 ## Estado
 
-Pendiente.
+Completada.
 
 ## Nombre
 
@@ -162,7 +162,7 @@ Pendiente.
 
 ## Estado
 
-Bloqueada.
+Pendiente.
 
 ## Nombre
 
