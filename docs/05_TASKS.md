@@ -8,7 +8,7 @@
 
 ## TASK-001
 
-Estado: Pendiente
+Estado: Completada
 
 Nombre:
 
@@ -36,7 +36,7 @@ Restricciones:
 
 ## TASK-002
 
-Estado: Bloqueada
+Estado: Pendiente
 
 Nombre:
 

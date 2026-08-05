@@ -105,3 +105,27 @@ JARVIS será construido desde un núcleo mínimo hacia funcionalidades más avan
 ## Motivo
 
 Reducir complejidad y permitir validación constante.
+
+---
+
+# ADR-005
+
+## Nombre
+
+Estructura de código fuente con directorio src.
+
+## Estado
+
+Aceptada.
+
+## Fecha
+
+Después de TASK-001.
+
+## Decisión
+
+El código fuente de JARVIS estará contenido dentro del directorio src.
+
+## Motivo
+
+Separar el código de la configuración, documentación y archivos externos del proyecto.
