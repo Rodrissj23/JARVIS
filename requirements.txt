@@ -1,0 +1,5 @@
+# Dependencias de JARVIS
+#
+# Actualmente no hay dependencias.
+# Cada dependencia agregada debe estar justificada técnicamente,
+# según la Regla 4 de docs/04_RULES.md.
