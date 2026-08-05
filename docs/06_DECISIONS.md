@@ -130,31 +130,35 @@ El código fuente de JARVIS estará contenido dentro del directorio src.
 
 Separar el código de la configuración, documentación y archivos externos del proyecto.
 
-ADR-006
-Nombre
+---
+
+# ADR-006
+
+## Nombre
 
 Identidad visual híbrida JARVIS.
 
-Estado
+## Estado
 
 Aceptada.
 
-Fecha
+## Fecha
 
 Después de TASK-001.
 
-Decisión
+## Decisión
 
 JARVIS utilizará una interfaz visual híbrida entre el estilo J.A.R.V.I.S. de Iron Man y un asistente moderno minimalista.
 
 La interfaz tendrá:
 
-Un núcleo visual central inspirado en un reactor.
-Estados visuales claros.
-Diseño limpio.
-Sensación de asistente personal avanzado.
-Evitar una interfaz cargada de elementos innecesarios.
-Motivo
+- Un núcleo visual central inspirado en un reactor.
+- Estados visuales claros.
+- Diseño limpio.
+- Sensación de asistente personal avanzado.
+- Evitar una interfaz cargada de elementos innecesarios.
+
+## Motivo
 
 Buscar una experiencia futurista e inmersiva sin convertir la aplicación en una simple demostración visual.
 
