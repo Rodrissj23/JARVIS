@@ -92,7 +92,7 @@ Crear la base inicial de la interfaz gráfica de JARVIS sin lógica de negocio n
 
 ## Estado
 
-Pendiente.
+Completada.
 
 ## Nombre
 
@@ -132,7 +132,7 @@ Crear el sistema visual que represente el estado actual de JARVIS.
 
 ## Estado
 
-Bloqueada.
+Pendiente.
 
 ## Nombre
 
