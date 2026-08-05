@@ -26,3 +26,8 @@ anthropic
 # ClimaModule (decisión de servicio tomada en TASK-008; Open-Meteo no
 # requiere API key)
 requests
+
+# python-dotenv: carga la configuración local del archivo .env,
+# usado para leer JARVIS_TTS_MODEL_PATH sin fijarlo en el código
+# (decisión tomada en TASK-009)
+python-dotenv
