@@ -265,3 +265,43 @@ La ejecución inicial será local para mantener independencia de servicios exter
 ## Motivo
 
 Piper TTS ofrece una solución ligera, rápida y compatible con ejecución local, permitiendo que JARVIS genere respuestas habladas sin depender de servicios externos.
+
+# ADR-011: Configuración externa mediante archivo .env
+
+## Estado
+
+Aceptada.
+
+## Contexto
+
+Durante la integración del flujo principal del sistema (TASK-009), fue necesario definir cómo se gestionaría la configuración de componentes que requieren valores externos.
+
+El componente VoiceEngine necesita recibir la ruta del modelo de voz de Piper TTS. Mantener esta ruta directamente en el código generaría un acoplamiento innecesario y dificultaría cambiar configuraciones sin modificar la implementación.
+
+## Decisión
+
+La configuración local del sistema se gestionará mediante un archivo `.env`.
+
+Las variables de configuración serán cargadas desde el entorno de ejecución utilizando `python-dotenv`.
+
+La ruta del modelo Piper será definida mediante:
+
+JARVIS_TTS_MODEL_PATH
+
+## Consecuencias
+
+### Positivas
+
+- Permite modificar configuraciones sin cambiar código.
+- Evita valores sensibles o dependientes del entorno dentro del repositorio.
+- Facilita futuras configuraciones adicionales del sistema.
+- Mantiene los componentes desacoplados de su configuración específica.
+
+### Negativas
+
+- Requiere configurar correctamente el archivo `.env` antes de ejecutar la aplicación.
+- Agrega una dependencia adicional (`python-dotenv`).
+
+## Alcance
+
+Esta decisión aplica inicialmente a la configuración del modelo Piper TTS, pero establece el mecanismo base para futuras configuraciones externas del sistema.

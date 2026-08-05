@@ -308,7 +308,7 @@ Pendiente.
 
 ## Estado
 
-Pendiente.
+Completada.
 
 ## Nombre
 
@@ -341,6 +341,7 @@ Conectar los componentes principales de JARVIS respetando la arquitectura defini
 - ADR-007: Framework de interfaz gráfica PySide6.
 - ADR-009: Motor de reconocimiento de voz Whisper.
 - ADR-010: Motor de síntesis de voz Piper TTS.
+- ADR-011: Configuración externa mediante archivo .env.
 
 ---
 
