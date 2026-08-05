@@ -1,6 +1,6 @@
 # TASKS
 
-**Versión:** 1.0
+**Versión:** 1.1
 
 ---
 
@@ -9,6 +9,7 @@
 Gestionar las tareas de desarrollo del proyecto JARVIS.
 
 Cada tarea debe tener definido:
+
 - Objetivo.
 - Alcance.
 - Restricciones.
@@ -144,17 +145,24 @@ Crear la capa encargada de recibir y emitir audio.
 
 ## Alcance
 
-Pendiente de definición al habilitar la tarea.
+- Implementar la captura de audio desde el micrófono.
+- Implementar Speech To Text mediante Whisper.
+- Implementar Text To Speech mediante Piper.
+- Crear VoiceEngine como interfaz pública de la capa Voice.
+- Preparar la capa para futuras estrategias de captura de audio.
 
 ## Restricciones
 
-- No modificar Orchestrator.
+- No modificar el Orchestrator.
 - No implementar lógica de decisiones.
-- No integrar módulos externos sin autorización.
+- No implementar la detección de palabra de activación.
+- No integrar Claude.
+- No modificar componentes fuera de la capa Voice.
 
 ## Decisiones asociadas
 
-Pendiente.
+- ADR-009: Whisper como motor de Speech To Text.
+- ADR-010: Piper como motor de Text To Speech.
 
 ---
 
@@ -166,11 +174,50 @@ Pendiente.
 
 ## Nombre
 
-Integrar Claude.
+Implementar el Orchestrator.
 
 ## Objetivo
 
-Conectar el sistema Brain con Claude como motor de razonamiento.
+Construir el componente central encargado de coordinar la comunicación entre los distintos componentes del sistema.
+
+## Alcance
+
+- Crear la estructura del Orchestrator.
+- Definir su interfaz pública.
+- Preparar la comunicación con UI.
+- Preparar la comunicación con Voice.
+- Preparar la comunicación con Brain.
+- Preparar la comunicación con Modules.
+- Mantener un único punto de coordinación del sistema.
+
+## Restricciones
+
+- No integrar Claude.
+- No implementar módulos.
+- No implementar lógica de conversación.
+- No ejecutar acciones del sistema.
+- No modificar otros componentes fuera del alcance de la tarea.
+
+## Decisiones asociadas
+
+- ADR-001: Arquitectura modular.
+- ADR-004: Desarrollo incremental.
+
+---
+
+# TASK-006
+
+## Estado
+
+Bloqueada.
+
+## Nombre
+
+Integrar Brain (Claude).
+
+## Objetivo
+
+Implementar la comunicación entre el Brain y Claude como motor principal de razonamiento.
 
 ## Alcance
 
@@ -178,13 +225,72 @@ Pendiente de definición al habilitar la tarea.
 
 ## Restricciones
 
-- Claude no controla directamente UI.
-- Claude no ejecuta acciones del sistema.
-- La comunicación debe pasar por Brain.
+- El Brain no debe comunicarse directamente con la UI.
+- El Brain no debe comunicarse directamente con Voice.
+- Toda comunicación debe realizarse a través del Orchestrator.
 
 ## Decisiones asociadas
 
 - ADR-002: Claude como motor principal de razonamiento.
+
+---
+
+# TASK-007
+
+## Estado
+
+Bloqueada.
+
+## Nombre
+
+Implementar el primer módulo del sistema.
+
+## Objetivo
+
+Crear el primer módulo funcional integrado al Orchestrator para validar la arquitectura modular.
+
+## Alcance
+
+Pendiente de definición al habilitar la tarea.
+
+## Restricciones
+
+- Toda comunicación debe pasar por el Orchestrator.
+- No acceder directamente a Brain, UI o Voice.
+
+## Decisiones asociadas
+
+Pendiente.
+
+---
+
+# TASK-008
+
+## Estado
+
+Bloqueada.
+
+## Nombre
+
+Implementar módulos adicionales.
+
+## Objetivo
+
+Incorporar nuevas capacidades al sistema respetando la arquitectura modular.
+
+## Alcance
+
+Pendiente de definición al habilitar la tarea.
+
+## Restricciones
+
+- Todos los módulos deben ser independientes.
+- No comunicarse entre sí.
+- Toda coordinación debe realizarse mediante el Orchestrator.
+
+## Decisiones asociadas
+
+Pendiente.
 
 ---
 
@@ -197,3 +303,4 @@ Una tarea debe:
 3. Respetar la arquitectura existente.
 4. No agregar funcionalidades futuras.
 5. Ser revisada antes de marcarse como completada.
+6. Solo puede existir una TASK en estado **Pendiente** al mismo tiempo.
