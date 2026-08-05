@@ -278,7 +278,7 @@ Crear el primer módulo funcional integrado al Orchestrator para validar la arqu
 
 ## Estado
 
-Bloqueada.
+Completada.
 
 ## Nombre
 
