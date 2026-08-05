@@ -215,3 +215,53 @@ La interfaz priorizará el núcleo como punto de interacción visual, evitando p
 ## Motivo
 
 Crear una experiencia inmersiva y simple, donde el usuario perciba a JARVIS como un asistente activo y no como una aplicación tradicional.
+
+# ADR-009
+
+## Nombre
+
+Motor de reconocimiento de voz.
+
+## Estado
+
+Aceptada.
+
+## Fecha
+
+Antes de TASK-004.
+
+## Decisión
+
+JARVIS utilizará Whisper como motor principal de reconocimiento de voz (STT).
+
+La ejecución inicial será local para mantener independencia de servicios externos y permitir evolución futura del sistema.
+
+## Motivo
+
+Whisper ofrece alta precisión de reconocimiento, soporte multilenguaje y una arquitectura compatible con un asistente personal de escritorio.
+
+---
+
+# ADR-010
+
+## Nombre
+
+Motor de síntesis de voz.
+
+## Estado
+
+Aceptada.
+
+## Fecha
+
+Antes de TASK-004.
+
+## Decisión
+
+JARVIS utilizará Piper TTS como motor principal de síntesis de voz (TTS).
+
+La ejecución inicial será local para mantener independencia de servicios externos y permitir una evolución progresiva del sistema.
+
+## Motivo
+
+Piper TTS ofrece una solución ligera, rápida y compatible con ejecución local, permitiendo que JARVIS genere respuestas habladas sin depender de servicios externos.
