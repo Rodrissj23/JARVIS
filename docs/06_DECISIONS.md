@@ -189,3 +189,29 @@ JARVIS utilizará PySide6 como framework principal para la interfaz gráfica.
 Permite crear una interfaz moderna, escalable y compatible con la experiencia visual buscada para JARVIS.
 
 Su sistema de componentes facilita futuras animaciones, estados visuales y elementos interactivos.
+
+---
+
+# ADR-008
+
+## Nombre
+
+Representación visual mediante núcleo central.
+
+## Estado
+
+Aceptada.
+
+## Fecha
+
+Después de TASK-002.
+
+## Decisión
+
+JARVIS utilizará un núcleo visual central inspirado en un reactor como elemento principal para representar sus estados.
+
+La interfaz priorizará el núcleo como punto de interacción visual, evitando paneles cargados de información.
+
+## Motivo
+
+Crear una experiencia inmersiva y simple, donde el usuario perciba a JARVIS como un asistente activo y no como una aplicación tradicional.
