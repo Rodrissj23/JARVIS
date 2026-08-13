@@ -1,81 +1,74 @@
 # Roadmap
 
-**Versión:** 1.0
+**Versión:** 2.0  
+**Actualizado:** 12/08/2026
 
 ---
 
 # Estado actual
 
-Fase 0 - Fundación
+JARVIS queda como proyecto de asistente general de escritorio. Parte de la experimentación de voz pasó temporalmente a WORK AGENT, donde ya se validaron parser por entidades, respuesta hablada, selección de micrófono y arquitectura STT separada del cerebro.
 
-Estado: En progreso
-
-Objetivo:
-
-Construir una base sólida para comenzar el desarrollo.
+Estado: **Pausado / investigación reutilizable en WORK AGENT**
 
 ---
 
-# Fase 0
+# Fase 0 — Fundación ✅
 
-- [x] Definir el proyecto.
-- [x] Definir la arquitectura.
-- [x] Definir el flujo principal.
-- [ ] Crear las reglas del proyecto.
-- [ ] Crear el sistema de tareas.
-- [ ] Configurar Claude Code.
-- [ ] Crear la estructura inicial del proyecto.
-
----
-
-# Fase 1
-
-Objetivo:
-
-Construir el núcleo de JARVIS.
-
-Incluye:
-
-- Interfaz principal.
-- Estados visuales.
-- Orchestrator.
-- Motor de voz.
-- Comunicación con Claude.
+- [x] Definir proyecto.
+- [x] Definir arquitectura.
+- [x] Definir flujo principal.
+- [x] Crear estructura inicial.
+- [x] Validar entorno Python y audio.
+- [x] Separar UI, Voice, Orchestrator, Brain y Modules.
 
 ---
 
-# Fase 2
+# Fase 1 — Núcleo
 
-Objetivo:
+- [x] UI PySide6 inicial.
+- [x] Estados visuales base.
+- [ ] Orchestrator estable.
+- [ ] STT local definitivo.
+- [ ] TTS natural definitivo.
+- [ ] Wake word.
 
-Primer asistente completamente funcional.
+Decisión actual: priorizar STT local con Whisper/faster-whisper y reutilizar lo aprendido en WORK AGENT.
 
-Incluye:
+---
+
+# Fase 2 — Asistente funcional
 
 - Conversación continua.
-- Hora.
-- Fecha.
+- Hora y fecha.
 - Clima.
+- Comandos locales.
+- Memoria corta de contexto.
 
 ---
 
-# Fase 3
-
-Objetivo:
-
-Sistema modular.
-
-Incluye:
+# Fase 3 — Sistema modular
 
 - WhatsApp.
-- Calendario.
-- Spotify.
 - Navegador.
 - Archivos.
+- Spotify.
 - Python.
+- Integración opcional con WORK AGENT para tareas laborales.
+
+---
+
+# Fase 4 — Experiencia JARVIS
+
+- Voz natural estable.
+- Wake word.
+- Ejecución en segundo plano.
+- Inicio automático.
+- UI reactiva al estado de voz.
+- Acciones encadenadas.
 
 ---
 
 # Regla
 
-No comenzar una nueva fase hasta completar la anterior.
+JARVIS no debe duplicar motores ya resueltos en WORK AGENT: la lógica reutilizable de voz, parser y skills se comparte o se porta conscientemente.
